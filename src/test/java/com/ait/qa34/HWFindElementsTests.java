@@ -35,6 +35,19 @@ public class HWFindElementsTests {
         WebElement element2 = driver.findElement(By.tagName("html"));
         System.out.println(element2.getText());
     }
+    @Test
+    public void findElementByCssSelector() {
+        driver.findElement(By.cssSelector("#dialog-notifications-success"));
+        driver.findElement(By.cssSelector("#bar-notification"));
+        driver.findElement(By.cssSelector(".bar-notification"));
+        driver.findElement(By.cssSelector(".ajax-loading-block-window"));
+        driver.findElement(By.cssSelector(".loading-image"));
+        driver.findElement(By.cssSelector(".master-wrapper-main"));
+        driver.findElement(By.cssSelector(".footer"));
+        driver.findElement(By.cssSelector(".footer-poweredby"));
+        driver.findElement(By.cssSelector(".footer-disclaimer"));
+        driver.findElement(By.cssSelector(".footer-menu-wrapper"));
+    }
     @AfterMethod
     public void tearDown() {
         driver.quit();

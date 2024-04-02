@@ -51,6 +51,7 @@ public class FindElementsTests {
 
     }
     //css selector
+    //xPath
     @Test
     public void findElementByCssSelector() {
         //id -> #id
