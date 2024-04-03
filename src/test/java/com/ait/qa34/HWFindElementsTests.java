@@ -48,6 +48,20 @@ public class HWFindElementsTests {
         driver.findElement(By.cssSelector(".footer-disclaimer"));
         driver.findElement(By.cssSelector(".footer-menu-wrapper"));
     }
+    @Test
+    public void findElementByXpath() {
+        driver.findElement(By.xpath("//*[@id='dialog-notifications-success']"));
+        driver.findElement(By.xpath("//*[@id='bar-notification']"));
+        driver.findElement(By.xpath("//*[@class='bar-notification']"));
+        driver.findElement(By.xpath("//*[@class='ajax-loading-block-window']"));
+        driver.findElement(By.xpath("//*[@class='loading-image']"));
+        driver.findElement(By.xpath("//*[@class='master-wrapper-main']"));
+        driver.findElement(By.xpath("//*[@class='footer']"));
+        driver.findElement(By.xpath("//*[@class='footer-disclaimer']"));
+        driver.findElement(By.xpath("//*[@class='footer-menu-wrapper']"));
+        driver.findElement(By.xpath("//*[@class='footer-poweredby']"));
+
+    }
     @AfterMethod
     public void tearDown() {
         driver.quit();
