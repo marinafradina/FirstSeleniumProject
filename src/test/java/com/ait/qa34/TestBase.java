@@ -31,9 +31,11 @@ public class TestBase {
     }
 
     public void type(By locator, String text) {
-        click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
+        if (text != null) {
+            click(locator);
+            driver.findElement(locator).clear();
+            driver.findElement(locator).sendKeys(text);
+        }
     }
 
     public void click(By locator) {
@@ -48,5 +50,29 @@ public class TestBase {
         } else {
             return true;
         }
+    }
+
+    public boolean isRegistrationEmailButton() {
+        return isElementPresen(By.cssSelector("ul:nth-child(1) .account"));
+    }
+
+    public void clickOnRegistrationButton() {
+        click(By.cssSelector("#register-button"));
+    }
+
+    public void fillLoginRegisterForm(String email, String password, String firstName, String lastName) {
+        type(By.name("FirstName"), firstName);
+        //enter Last name
+        type(By.cssSelector("#LastName"), lastName);
+        //enter email
+        type(By.name("Email"), email);
+        //enter passwoort
+        type(By.cssSelector("#Password"), password);
+        //enter ConfirmPassword
+        type(By.cssSelector("#ConfirmPassword"), password);
+    }
+
+    public void clickOnRegisterLink() {
+        click(By.cssSelector("[href=\'/register\']"));
     }
 }
